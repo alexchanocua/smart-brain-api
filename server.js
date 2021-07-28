@@ -43,7 +43,7 @@ w/ (dependency injection: passing dependencies to the function)
 */
 // ROOT 
 app.get('/', (req, res) => {
-    res.send(database.users);
+    res.send("it's working");
 });
 
 //SIGN-IN 
@@ -59,7 +59,7 @@ app.get('/profile/:id', (req, res) => { profile.handleProfile(req, res, db, bcry
 // IMAGE 
 app.put('/image', image.handleImage(db));
 app.post('/imageurl', (req, res) => {image.handleApiCall(req, res)});
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log('app is running on port 3000...');
 });
 
